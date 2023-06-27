@@ -106,7 +106,8 @@ Test accuracy (XGBoost)	91.53%
 Table 7: TensorFlow vs. XGBoost Cervical Cancer
  
 #### Proposed: Architecture
- 
+ ![pipeline](https://github.com/julia-donato/FinalProjectCC/assets/121905325/07d896aa-7268-4775-9026-1f388cb4e6cb)
+
 Figure 1: Project Architecture
 
 Utilizing a variety of AWS services and machine learning methods, a heart disease prediction model was created and deployed on Amazon SageMaker in this project. Figure 1 depicts the project's overall architecture, which is as follows:
