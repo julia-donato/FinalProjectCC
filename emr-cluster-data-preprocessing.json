@@ -1,0 +1,60 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "CloudFormation Template for Amazon EMR Cluster",
+    "Resources": {
+      "EMRCluster": {
+        "Type": "AWS::EMR::Cluster",
+        "Properties": {
+          "Name": "EMRClusterForDataPreprocessingAndML",
+          "ReleaseLabel": "emr-6.4.0",
+          "Applications": [
+            {"Name": "Hadoop"},
+            {"Name": "Spark"},
+            {"Name": "Hive"},
+            {"Name": "JupyterHub"}
+          ],
+          "Configurations": [
+            {
+              "Classification": "jupyter-sparkmagic",
+              "Properties": {
+                "proxy": "true"
+              }
+            },
+            {
+              "Classification": "jupyterhub",
+              "Properties": {
+                "c.Authenticator.admin_users": "{'user1', 'user2'}",
+                "c.JupyterHub.authenticator_class": "dummyauthenticator.DummyAuthenticator"
+              }
+            }
+          ],
+          "Instances": {
+            "Ec2KeyName": "julia",
+            "EmrManagedMasterSecurityGroup": "sg-0c35382f828480d6d",
+            "EmrManagedSlaveSecurityGroup": "sg-0c35382f828480d6d",
+            "InstanceGroups": [
+              {
+                "InstanceRole": "MASTER",
+                "InstanceType": "m5.xlarge",
+                "InstanceCount": 1
+              },
+              {
+                "InstanceRole": "CORE",
+                "InstanceType": "m5.xlarge",
+                "InstanceCount": 2
+              }
+            ],
+            "KeepJobFlowAliveWhenNoSteps": true,
+            "TerminationProtected": false,
+            "Ec2SubnetId": "subnet-04e1da2126de020d8"
+          },
+          "JobFlowRole": "EMR_EC2_DefaultRole",
+          "ServiceRole": "EMR_DefaultRole",
+          "VisibleToAllUsers": true,
+          "LogUri": "s3://finalproject-jmd/EMRLogs",
+          "ScaleDownBehavior": "TERMINATE_AT_TASK_COMPLETION"
+        }
+      }
+    }
+  }
+  

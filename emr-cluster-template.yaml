@@ -1,0 +1,23 @@
+Resources:
+  EMRCluster:
+    Type: "AWS::EMR::Cluster"
+    Properties:
+      Name: "MyEMRCluster"
+      ReleaseLabel: "emr-6.4.0"
+      Instances:
+        MasterInstanceType: "m5.xlarge"
+        CoreInstanceGroup:
+          InstanceType: "m5.xlarge"
+          InstanceCount: 2
+        Ec2SubnetId: "subnet-04e1da2126de020d8"
+        EmrManagedMasterSecurityGroup: "sg-0b3eabe2ebda29c12"
+        EmrManagedSlaveSecurityGroup: "sg-0b3eabe2ebda29c12"
+      Applications:
+        - Name: "Hadoop"
+        - Name: "Spark"
+        - Name: "Hive"
+        - Name: "Presto"
+      JobFlowRole: "EMR_EC2_DefaultRole"
+      ServiceRole: "EMR_DefaultRole"
+      VisibleToAllUsers: true
+      LogUri: "s3://finalproject-jmd/EMRLogs"
