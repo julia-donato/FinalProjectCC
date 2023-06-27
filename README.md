@@ -180,4 +180,4 @@ References
 [9] DR. Sobar, R. Machmud, and A. Wijaya, "Behavior Determinant Based Cervical Cancer Early Detection with Machine Learning Algorithm," Advanced Science Letters, vol. 22, no. 10, pp. 3120-3123, Oct. 2016. https://archive.ics.uci.edu/ml/datasets/Cervical%20Cancer%20Behavior%20Risk
 [10] W. H. Wolberg, W. N. Street, and O. L. Mangasarian, "Breast cancer Wisconsin (diagnostic) data set," UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)
 [11] M. A. Little, P. E. McSharry, E. J. Hunter, and L. O. Ramig, "Suitability of dysphonia measurements for telemonitoring of Parkinson's disease," IEEE Transactions on Biomedical Engineering, vol. 56, no. 4, pp. 1015-1022, Apr. 2009. https://archive.ics.uci.edu/ml/datasets/parkinsons
-![image](https://github.com/julia-donato/FinalProjectCC/assets/121905325/a589c6fd-5dc6-417c-9856-58aac0af0bfb)
+
